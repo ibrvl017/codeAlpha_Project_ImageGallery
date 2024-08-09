@@ -1,8 +1,20 @@
 // scripts.js
 let currentImageIndex = 0;
+const images = document.querySelectorAll('.thumbnail');
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('current-image');
+
+function openLightbox(index) {
+    currentImageIndex = index;
+    lightbox.style.display = 'flex';
+    showImage(currentImageIndex);
+}
+
+function closeLightbox() {
+    lightbox.style.display = 'none';
+}
 
 function showImage(index) {
-    const images = document.querySelectorAll('.gallery-image');
     if (index >= images.length) {
         currentImageIndex = 0;
     } else if (index < 0) {
@@ -11,14 +23,9 @@ function showImage(index) {
         currentImageIndex = index;
     }
 
-    images.forEach((img, i) => {
-        img.classList.toggle('active', i === currentImageIndex);
-    });
+    lightboxImage.src = images[currentImageIndex].src;
 }
 
 function changeImage(direction) {
     showImage(currentImageIndex + direction);
 }
-
-// Initial display
-showImage(currentImageIndex);

@@ -7,24 +7,36 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1> <strong> Image Gallery </strong> </h1>
+    </header>
     <div class="gallery-container">
-        <div class="gallery">
-            <img src="images/wif.jpeg" class="gallery-image active" alt="Image 1">
-            <img src="images/btc pizza day.jpeg" class="gallery-image" alt="Image 2">
-            <img src="images/oligark.jpeg" class="gallery-image" alt="Image 3">
-            <img src="images/oligarch.jpeg" class="gallery-image" alt="Image 2">
-            <img src="images/supertaco.jpeg" class="gallery-image" alt="Image 2">
-            <img src="images/night.jpeg" class="gallery-image" alt="Image 2">
-            <img src="images/me.jpeg" class="gallery-image" alt="Image 2">
-            <img src="images/kurucesme.jpeg" class="gallery-image" alt="Image 2">
-            <img src="images/hero.jpeg" class="gallery-image" alt="Image 2">
-            <img src="images/dollar.jpeg" class="gallery-image" alt="Image 2">
-            <img src="images/cloud.jpeg" class="gallery-image" alt="Image 2">
-            <img src="images/baba.jpeg" class="gallery-image" alt="Image 2">
+        <div class="grid-gallery">
+            <img src="images/wif.jpeg" class="thumbnail" alt="Image 1" onclick="openLightbox(0)">
+            <img src="images/supertaco.jpeg" class="thumbnail" alt="Image 2" onclick="openLightbox(1)">
+            <img src="images/oligark.jpeg" class="thumbnail" alt="Image 3" onclick="openLightbox(2)">
+            <img src="images/oligarch.jpeg" class="thumbnail" alt="Image 3" onclick="openLightbox(3)">
+            <img src="images/night.jpeg" class="thumbnail" alt="Image 3" onclick="openLightbox(4)">
+            <img src="images/me.jpeg" class="thumbnail" alt="Image 3" onclick="openLightbox(5)">
+            <img src="images/kurucesme.jpeg" class="thumbnail" alt="Image 3" onclick="openLightbox(6)">
+            <img src="images/hero.jpeg" class="thumbnail" alt="Image 3" onclick="openLightbox(7)">
+            <img src="images/dollar.jpeg" class="thumbnail" alt="Image 3" onclick="openLightbox(8)">
+            <img src="images/cloud.jpeg" class="thumbnail" alt="Image 3" onclick="openLightbox(9)">
+            <img src="images/btc pizza day.jpeg" class="thumbnail" alt="Image 3" onclick="openLightbox(10)">
+            <img src="images/baba.jpeg" class="thumbnail" alt="Image 3" onclick="openLightbox(11)">
         </div>
-        <button class="prev" onclick="changeImage(-1)">&#10094;</button>
-        <button class="next" onclick="changeImage(1)">&#10095;</button>
+
+        <div id="lightbox" class="lightbox">
+            <span class="close" onclick="closeLightbox()">&times;</span>
+            <img class="lightbox-image" id="current-image">
+            <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+            <button class="next" onclick="changeImage(1)">&#10095;</button>
+        </div>
     </div>
+    <footer> 
+        <p> Code_Alpha internship by ibrvl </p>
+    </footer>
+
     <script src="scripts.js"></script>
 </body>
 </html>
